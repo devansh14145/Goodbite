@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GoodBite — Track, Remind & Donate</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>GoodBite</h1>
+    <p class="tag">Reduce domestic & small-business food waste — track, donate, and save</p>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <form id="itemForm" class="card">
+        <h2>Add / Update Food Item</h2>
+        <div class="row">
+          <label>Item name<input id="name" required /></label>
+          <label>Quantity<input id="qty" type="number" min="1" value="1" required /></label>
+        </div>
+        <div class="row">
+          <label>Category
+            <select id="category">
+              <option>Perishable</option>
+              <option>Semi-perishable</option>
+              <option>Non-perishable</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Purchase date<input id="purchase" type="date" /></label>
+          <label>Expiry date<input id="expiry" type="date" required /></label>
+        </div>
+        <div class="row buttons">
+          <button id="saveBtn" type="submit">Save item</button>
+          <button id="clearBtn" type="button">Clear</button>
+        </div>
+      </form>
+
+      <div class="card">
+        <h2>Nearby Donation Centers</h2>
+        <p id="locMsg">Click <button id="locBtn" class="inline">Get my location</button> to show nearby centers.</p>
+        <ul id="centersList" class="centers"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Quick Actions</h2>
+        <div class="quick">
+          <button id="notifyPerm">Request notification permission</button>
+          <button id="suggestBuy">Suggest what to buy</button>
+          <button id="exportBtn">Export items (JSON)</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="card">
+        <h2>Tracked Items</h2>
+        <div id="stats" class="stats"></div>
+        <ul id="itemsList" class="items"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Prototype — for Paranox All rights reserved to @Devansh Choudhary.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
